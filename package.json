@@ -1,0 +1,26 @@
+{
+  "name": "default",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --env isDev=false",
+    "dev-server": "webpack-dev-server --env isDev=true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  }
+}

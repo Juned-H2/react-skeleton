@@ -17,8 +17,7 @@ module.exports = env => {
             },
             {
                 use: ['style-loader', 'css-loader'],
-                test: /\.s?css$/i,
-                exclude: /node_modules/
+                test: /\.s?css$/i
             }]
         },
         devServer: {

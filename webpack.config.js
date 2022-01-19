@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = env => {
@@ -24,6 +25,10 @@ module.exports = env => {
             static: './',
             open: true
         },
-        devtool: env.isDev ? 'eval-cheap-module-source-map' : false
+        devtool: env.isDev ? 'eval-cheap-module-source-map' : false,
+        plugins: [new HtmlWebpackPlugin({
+            title: 'React Skeleton',
+            template: './index.html'
+        })]
     }
 };

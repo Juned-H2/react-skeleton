@@ -23,7 +23,8 @@ module.exports = env => {
         },
         devServer: {
             static: './',
-            open: true
+            open: true,
+            historyApiFallback: true
         },
         devtool: env.isDev ? 'eval-cheap-module-source-map' : false,
         plugins: [new HtmlWebpackPlugin({

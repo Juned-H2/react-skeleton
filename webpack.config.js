@@ -11,15 +11,21 @@ module.exports = env => {
             filename: 'bundle.js'
         },
         module: {
-            rules: [{
+            rules: [
+                {
                 loader: 'babel-loader',
                 test: /\.js$/,
                 exclude: /node_modules/
-            },
-            {
-                use: ['style-loader', 'css-loader'],
-                test: /\.s?css$/i
-            }]
+                },
+                {
+                    use: ['style-loader', 'css-loader'],
+                    test: /\.s?css$/i
+                },
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset/resource',
+                },
+        ]
         },
         devServer: {
             static: './',
@@ -29,7 +35,8 @@ module.exports = env => {
         devtool: env.isDev ? 'eval-cheap-module-source-map' : false,
         plugins: [new HtmlWebpackPlugin({
             title: 'React Skeleton',
-            template: './index.html'
+            template: './index.html',
+            inject: false
         })]
     }
 };
